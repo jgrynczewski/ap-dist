@@ -64,7 +64,7 @@ class main_menu( wx.Frame ):
                 p = sp.Popen( cmd, shell = True, stdin = sp.PIPE, stdout = sp.PIPE, stderr = sp.STDOUT, close_fds = True )
                 self.path = p.stdout.read( )[ :-1 ] + '/'
                 self.home = self.path[:self.path[:-1].rfind("/")] + '/' 
-                self.configurationPath = self.home+"Assistive-Prototypes/"
+                self.configurationPath = self.home+"ap-dist/"
                 
                 files = [ '.pathToAP', './modules/.pathToAP', './modules/pilots/.pathToAP', './modules/others/.pathToAP', 'modules/ewriting/.pathToAP', 'modules/games/atmemory/.pathToAP', 'modules/games/atsweeper/.pathToAP' ]
 
