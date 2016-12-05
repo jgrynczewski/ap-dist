@@ -164,7 +164,7 @@ class main_menu( wx.Frame ):
         #-------------------------------------------------------------------------
         def createGui(self):
 
-                cmd = "cd " + self.home + "Assistive-Prototypes && git pull --dry-run | grep -q -v 'Already up-to-date.' && changed=1"
+                cmd = "cd " + self.home + "ap-dist && git pull --dry-run | grep -q -v 'Already up-to-date.' && changed=1"
                 p = Popen( cmd, shell=True, stdin=PIPE, stdout=PIPE, stderr=STDOUT, close_fds=True )
                 self.output = p.stdout.read( )
 
@@ -468,7 +468,7 @@ class main_menu( wx.Frame ):
                                             elif len(self.output) == 0:
                                                     os.system("milena_say Brak aktualizacji")
                                             else:
-                                                    os.system("cd " + self.home + "Assistive-Prototypes && git pull")
+                                                    os.system("cd " + self.home + "ap-dist && git pull")
                                                     os.system("milena_say Zaktualizowano pisaka")
                                                     
                                                     with open(self.path + "read", 'a+') as f:
@@ -497,7 +497,7 @@ class main_menu( wx.Frame ):
                                                         os.system("milena_say Wiadomość numer %i." % i)
                                                         os.system("milena_say %s" % j)
                                                                     
-                                                    cmd = "cd " + self.home + "Assistive-Prototypes && git pull --dry-run | grep -q -v 'Already up-to-date.' && changed=1"
+                                                    cmd = "cd " + self.home + "ap-dist && git pull --dry-run | grep -q -v 'Already up-to-date.' && changed=1"
                                                     p = Popen( cmd, shell=True, stdin=PIPE, stdout=PIPE, stderr=STDOUT, close_fds=True )
                                                     self.output = p.stdout.read( )
 
